@@ -1,8 +1,11 @@
-package Task2;
+package Task2.Factory;
+
+import Task2.ClassesTree.*;
+
 public class Factory {
 
     public static Developer createPerson(Level level) {
-        Developer developer = null;
+        Developer developer;
         switch (level){
         case JUNIOR:
             developer = new Junior();

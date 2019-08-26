@@ -1,4 +1,4 @@
-package Task2;
+package Task2.ClassesTree;
 
 public class Developer {
     private int experience;

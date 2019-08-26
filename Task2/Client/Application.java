@@ -1,5 +1,11 @@
-package Task2;
+package Task2.Client;
+
+import Task2.ClassesTree.Developer;
+import Task2.ClassesTree.Level;
+import Task2.Factory.Factory;
+
 import java.util.Random;
+
 public class Application {
 
     public static void main(String[] args) {
@@ -17,13 +23,13 @@ public static Developer [] fill(){
              int randomNumber = random.nextInt(3);
              switch (randomNumber){
                  case 1:
-                     developer =Factory.createPerson(Level.JUNIOR);
+                     developer = Factory.createPerson(Level.JUNIOR);
                  break;
                  case 2:
                      developer =Factory.createPerson(Level.MIDDLE);
                  break;
                  case 3:
-                     developer =Factory.createPerson(Level.SENIOR);;
+                     developer =Factory.createPerson(Level.SENIOR);
                  break;
              }
          developers[i]= developer;

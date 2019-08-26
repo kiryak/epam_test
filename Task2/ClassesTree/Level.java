@@ -1,7 +1,7 @@
-package Task2;
+package Task2.ClassesTree;
 
 public enum Level {
     JUNIOR,
     MIDDLE,
-    SENIOR;
+    SENIOR
 }
