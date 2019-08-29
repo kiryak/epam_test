@@ -1,4 +1,4 @@
-package Task4;
+package Task4.Main;
 
 import Task4.Calculation.Calculation;
 
