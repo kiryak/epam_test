@@ -2,7 +2,6 @@ package Task4.Calculation;
 
 import Task4.Curriculum.J2EEDeveloper;
 import Task4.Curriculum.JavaDeveloper;
-import Task4.Curriculum.JavaServlets;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
