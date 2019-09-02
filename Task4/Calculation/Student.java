@@ -21,7 +21,6 @@ public class Student {
         this.curriculum = curriculum;
     }
 
-
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder(" ");
