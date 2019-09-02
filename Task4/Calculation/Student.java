@@ -15,6 +15,14 @@ public class Student {
         return input2;
     }
 
+    public void setInput1(String input1) {
+        this.input1 = input1;
+    }
+
+    public void setInput2(String input2) {
+        this.input2 = input2;
+    }
+
     public Student(String name, String surname, String curriculum) {
         this.name = name;
         this.surname = surname;
