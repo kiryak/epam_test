@@ -8,5 +8,4 @@ public class Application {
         calculation.getResult1();
         calculation.getResult2();
     }
-
 }

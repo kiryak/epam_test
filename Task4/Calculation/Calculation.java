@@ -2,10 +2,10 @@ package Task4.Calculation;
 
 import Task4.Curriculum.J2EEDeveloper;
 import Task4.Curriculum.JavaDeveloper;
-import Task4.Curriculum.JavaServlets;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 
 public class Calculation {
@@ -13,10 +13,18 @@ public class Calculation {
     JavaDeveloper javaDeveloper = new JavaDeveloper();
     Student student1 = new Student("Ivan", "Ivanov", "J2EEDeveloper");
     Student student2 = new Student("Petr","Petrov","Java Developer");
+    LocalDateTime dateOfStart1;
+    LocalDateTime dateOfStart2;
 
     public void getResult1() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        LocalDateTime dateOfStart1 = LocalDate.parse(student1.getInput1(), formatter).atTime(11, 20);
+        try {
+        dateOfStart1 = LocalDate.parse(student1.getInput1(), formatter).atTime(11, 20);
+        }
+        catch (DateTimeParseException e) {
+            System.out.println("Invalid date format exception");
+            e.printStackTrace();
+        }
         LocalDateTime dateNow = LocalDateTime.now();
         LocalDateTime sum = dateOfStart1.plus(j2eeDeveloper.getDuration());
 
@@ -39,7 +47,6 @@ public class Calculation {
         temporal = temporal.plusMinutes( minutes );
 
         long seconds = temporal.until(dateNow, ChronoUnit.SECONDS);
-        System.out.println(temporal);
         if (temporal.compareTo(sum)<0) {
         System.out.println( student1.toString() + "Обучение не закончено. До окончания обучения осталось " + (-years) + " years " +
                 (- months) + " months " +
@@ -61,7 +68,12 @@ public class Calculation {
 
     public void getResult2() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        LocalDateTime dateOfStart2 = LocalDate.parse(student2.getInput2(), formatter).atTime(8,56);
+        try {
+        dateOfStart2 = LocalDate.parse(student2.getInput2(), formatter).atTime(8,56);}
+        catch (DateTimeParseException e){
+            System.out.println("Invalid date format exception");
+            e.printStackTrace();
+        }
         LocalDateTime dateNow = LocalDateTime.now();
         LocalDateTime sum = dateOfStart2.plus(javaDeveloper.getDuration());
 
