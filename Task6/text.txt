@@ -1,0 +1,30 @@
+There are five SOLID principles put forth by Robert (Uncle Bob) C. Martin.
+
+Single Responsibility Principle
+
+A class should have one, and only one, reason to change
+Did you ever have a Swiss Army knife?  64 features, but you could never get to the one you needed.  And who uses the toothpick from a knife anyway?  Yuck!  Code that does too much is very much like that Swiss Army knife trying to be all things to all scenarios results in overly complex and fragile code.  Keeping your methods short and of singular purpose brings clarity and ease of maintainability to your software.
+
+An extension of the Single Responsibility Principle is to make sure you don’t instantiate a class where you also use that class.  Combining the creation and use of a class obfuscates the purpose of your code, and forces the calling code to change if the type of class you need changes.  Instead, depend on abstractions and use factories or Dependency Injection to get the instances the calling code requires.
+
+Open Closed Principle
+
+A module should be open for extension but closed for modification
+Just as you wouldn’t want to add a basement to a finished house, making modifications to fundamental parts of code significantly increases the chance of introducing bugs or side effects.  It is better to use extensions (like adding a patio room) to add on to or alter functionality of a module through polymorphism than to continually edit the base code by adding switch statements.
+
+Liskov Substitution Principle
+
+Subclasses should be substitutable for their base classes
+If you are at a restaurant, and order a salad, the way you eat it (and when it gets served) doesn’t vary just because this time you ordered a Caesar Salad and last time you ordered a house salad.  In the same way, derived classed must be able to be used by the client code without any adverse effects on the function of the client code.
+
+Interface Segregation Principle
+
+Many client specific interfaces are better than one general purpose interface
+Just like in Visual Studio where you can pick you development profile (C#, VB.NET), your classes should tailor their interfaces to the clients that consume them.  Fine grained interfaces reduce the analysis paralysis that can occur when there are too many choices.
+
+Dependency Inversion Principle
+
+Depend upon Abstractions. Do not depend on concretions.
+For those of you who drive, do you have to build your car every time you go to work?  Can you drive more than one different car, or can you only drive one physical instance of a car?  Have you ever borrowed a car (or rented one?)
+
+Think of this in your software.  When your code instantiates a concrete class and then uses that instance, it completely depends on that particular implementation, and will never be able to use another one until you change how the code is written.  However, if you code to an Interface, you can borrow a car, rent a car, or buy a new one!
