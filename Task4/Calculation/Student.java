@@ -4,21 +4,17 @@ public class Student {
     private String name;
     private String surname;
     private String curriculum;
-    private String input1 = "29.08.2019";
-    private String input2 = "10.08.2019";
+    private String input;
 
-    public Student(String name, String surname, String curriculum) {
+    public Student(String name, String surname, String curriculum,String input ){
         this.name = name;
         this.surname = surname;
         this.curriculum = curriculum;
+        this.input = input;
     }
 
-    public String getInput1() {
-        return input1;
-    }
-
-    public String getInput2() {
-        return input2;
+    public String getInput() {
+        return input;
     }
 
     @Override
